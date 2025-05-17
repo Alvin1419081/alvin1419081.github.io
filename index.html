@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin Zhang - 个人网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #f0f2ff;
+            margin: 0;
+        }
+        .bg-gradient-radial {
+            background-image: none;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            border: transparent;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
+        *::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        *::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            border: transparent;
+        }
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .category-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+            color: #4b5563;
+        }
+
+        .category-card ul li {
+            padding-left: 20px;
+            text-indent: -20px;
+            margin-bottom: 4px;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .category-card ul li::before {
+            content: '•';
+            color: #6b7280;
+            margin-right: 8px;
+        }
+
+        .section-row {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-section {
+            width: 100%;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .works-section {
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .category-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .category-cards-container .category-card {
+            width: 100%;
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* 根据图片，调整断点 */
+        @media (min-width: 900px) { /* 调整为 900px */
+            .section-row {
+                flex-direction: row;
+            }
+            .contact-section {
+                width: 30%;
+                margin-right: 24px;
+                margin-bottom: 0;
+            }
+            .works-section {
+                width: 70%;
+            }
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f2ff;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-link:hover {
+            background-color: #e5e7eb;
+        }
+
+        .contact-link-text {
+            color: #4b5563;
+            font-medium;
+        }
+
+        .contact-link-icon {
+            color: #3b82f6;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contact-link:hover .contact-link-icon {
+            color: #2563eb;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start py-8">
+    <header class="text-center mb-8 transition-all 0.3s ease">
+        <h1 class="text-4xl font-bold text-gray-800 transition-all 0.3s ease">Alvin Zhang</h1>
+        <p class="text-lg text-gray-600 mt-2 transition-all 0.3s ease">你好呀，z这是我的自我介绍😊</p>
+    </header>
+
+    <main class="w-full px-4 section-row">
+        <section class="bg-white rounded-xl shadow-lg p-6  contact-section">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4 transition-all 0.3s ease">联系我</h2>
+            <div class="space-y-3 transition-all 0.3s ease">
+                <a href="https://space.bilibili.com/1441723022?spm_id_from=333.1365.0.0"  target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-link-text">BiliBili: Alvin-1D0642</span>
+                    <span class="contact-link-icon">
+                        前往 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
+                </a>
+                <a href="youtu.be/@alvin-1d0642" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-link-text">YouTube: Alvin-1D0642</span>
+                    <span class="contact-link-icon">
+                        前往 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
+                </a>
+                <div class="flex items-center justify-between bg-gray-100 rounded-lg p-4">
+                    <span class="text-gray-700 font-medium transition-all 0.3s ease">QQ: 2150847364</span>
+                     <span class="text-gray-600 italic transition-all 0.3s ease">(请备注来意)</span>
+                </div>
+                <a href="https://teams.live.com/l/invite/FEAsdg_ifvicI4otx4" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-link-text">Microsoft Teams</span>
+                    <span class="contact-link-icon">
+                        加入 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle transition-all 0.3s ease"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-8 space-y-6 works-section">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4 transition-all 0.3s ease">我都做什么？</h2>
+            <div class="category-cards-container">
+                <div class="category-card" id="windows-category">
+                    <h3>Windows</h3>
+                    <ul>
+                        <li>致力于通知 Windows 更新、安装系统、发展史和整活等。</li>
+                        <li>会转载一些 Microsoft 宣传片和发布会。</li>
+                        <li>Windows 更新：通知新版 Windows 当中加入的新功能。</li>
+                        <li>安装系统：用虚拟机为大家录制 Windows 镜像安装的全过程 (从某种意义上和水视频差不多) (bushi)。</li>
+                        <li>发展史：Windows 各个部件的发展史 (暂不考虑更新)。</li>
+                        <li>整活：(大家应该明白是什么意思) 各种折腾 Windows 的骚操作。</li>
+                    </ul>
+                </div>
+                <div class="category-card" id="zhengzhou-traffic-category">
+                    <h3>郑州交通</h3>
+                    <ul>
+                        <li>同样，我也是郑州交通圈的一员，闲来没事会给大家发一些关于郑州地铁的新闻、运转、POV、科普。</li>
+                        <li>甚至做一个新线的混剪或宣传片练练特效，或宣传新线。</li>
+                        <li>关键词：郑州交通、地铁</li>
+                    </ul>
+                </div>
+                <div class="category-card" id="railway-science-category">
+                    <h3 style="margin-bottom: 1rem;">铁路科普</h3>
+                    <ul style="padding-left: 0;">
+                        <li style="margin-bottom: 0.25rem;">铁路科普：记录解放和SS8 000系列通过的列车，</li>
+                        <li style="margin-bottom: 0.25rem;">为大家推荐较为优异的郑州拍车机位。</li>
+                        <li>关键词：铁路科普、拍车</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-8 text-gray-500 text-sm transition-all 0.3s ease">
+        <p>© 2025 Alvin-1D0642</p>
+    </footer>
+</body>
+</html>
