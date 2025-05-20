@@ -3,253 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvin Zhang - 个人网站</title>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <title>Alvin-1D0642 PerWeb</title> <link rel="icon" href="https://i2.hdslb.com/bfs/face/b440cecae6d564f4b2a4047d1a3c3fa5267a0736.jpg@150w_150h.jpg" type="image/jpeg"> <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* 可以根据需要添加一些自定义样式，但尽量使用 Tailwind */
         body {
-            font-family: 'Google Sans', sans-serif;
-            background-color: #f0f2ff;
+            font-family: "Inter", sans-serif; /* 使用 Inter 字体 */
             margin: 0;
-        }
-        .bg-gradient-radial {
-            background-image: none;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            border: transparent;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-        }
-        *::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-        *::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            border: transparent;
-        }
-        *::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            background-color: #f0f0f0; /* 页面背景色，方便查看效果 */
         }
 
-        .category-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 16px;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        /* 自定义渐变背景 */
+        .gradient-background {
+            background: linear-gradient(to right, #f0e4d7, #e0c6d8, #c6b9e0);
         }
 
-        .category-card:hover {
-           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-            z-index: 2;
+        /* 联系方式区域的背景图 */
+        .contact-bg {
+            background-image: url('https://github.com/Alvin1419081/alvin1419081.github.io/blob/32a9ddd0eaefeb8ec27a7bdc09b6fa49337845cf/pic2.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 背景固定，实现云母效果的视觉深度 */
         }
 
-        .category-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
+        /* 云母透明效果尝试 */
+        .mica-card {
+            background-color: rgba(255, 255, 255, 0.3); /* 半透明白色作为基础，更接近云母 */
+            backdrop-filter: blur(10px) saturate(180%); /* 尝试云母模糊和饱和度效果 */
+            -webkit-backdrop-filter: blur(10px) saturate(180%); /* 兼容性前缀 */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* 轻微边框 */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* 柔和阴影 */
         }
-
-        .category-card ul {
-            list-style: none;
-            padding-left: 0;
-            margin-left: 0;
-            color: #4b5563;
-        }
-
-        .category-card ul li {
-            padding-left: 20px;
-            text-indent: -20px;
-            margin-bottom: 4px;
-            line-height: 1.5;
-            transition: all 0.3s ease;
-        }
-
-        .category-card ul li::before {
-            content: '•';
-            color: #6b7280;
-            margin-right: 8px;
-        }
-
-        .section-row {
-            display: flex;
-            flex-direction: column;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1200px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-section {
-            width: 100%;
-            margin-bottom: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .works-section {
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .category-cards-container {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .category-cards-container .category-card {
-            width: 100%;
-            margin-bottom: 0;
-            transition: all 0.3s ease;
-        }
-
-        /* 根据图片，调整断点 */
-        @media (min-width: 900px) { /* 调整为 900px */
-            .section-row {
-                flex-direction: row;
-            }
-            .contact-section {
-                width: 30%;
-                margin-right: 24px;
-                margin-bottom: 0;
-            }
-            .works-section {
-                width: 70%;
-            }
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #f0f2ff;
-            border-radius: 0.75rem;
-            padding: 1rem;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .contact-link:hover {
-            background-color: #e5e7eb;
-        }
-
-        .contact-link-text {
-            color: #4b5563;
-            font-medium;
-        }
-
-        .contact-link-icon {
-            color: #3b82f6;
-            transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .contact-link:hover .contact-link-icon {
-            color: #2563eb;
-        }
-
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-start py-8">
-    <header class="text-center mb-8 transition-all 0.3s ease">
-        <h1 class="text-4xl font-bold text-gray-800 transition-all 0.3s ease">Alvin Zhang</h1>
-        <p class="text-lg text-gray-600 mt-2 transition-all 0.3s ease">你好呀，z这是我的自我介绍😊</p>
-    </header>
+<body>
 
-    <main class="w-full px-4 section-row">
-        <section class="bg-white rounded-xl shadow-lg p-6  contact-section">
-            <h2 class="text-2xl font-semibold text-blue-600 mb-4 transition-all 0.3s ease">联系我</h2>
-            <div class="space-y-3 transition-all 0.3s ease">
-                <a href="https://space.bilibili.com/1441723022?spm_id_from=333.1365.0.0"  target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-link-text">BiliBili: Alvin-1D0642</span>
-                    <span class="contact-link-icon">
-                        前往 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
-                    </span>
-                </a>
-                <a href="youtu.be/@alvin-1d0642" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-link-text">YouTube: Alvin-1D0642</span>
-                    <span class="contact-link-icon">
-                        前往 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
-                    </span>
-                </a>
-                <div class="flex items-center justify-between bg-gray-100 rounded-lg p-4">
-                    <span class="text-gray-700 font-medium transition-all 0.3s ease">QQ: 2150847364</span>
-                     <span class="text-gray-600 italic transition-all 0.3s ease">(请备注来意)</span>
-                </div>
-                <a href="https://teams.live.com/l/invite/FEAsdg_ifvicI4otx4" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-link-text">Microsoft Teams</span>
-                    <span class="contact-link-icon">
-                        加入 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle transition-all 0.3s ease"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
-                    </span>
-                </a>
+    <div class="w-full bg-[#e2f0d9] py-16 px-4 md:px-24 lg:px-32 flex flex-col md:flex-row items-center md:items-start justify-start relative">
+         <div class="absolute right-0 top-0 w-1/2 h-full bg-[#c5e0b4] rounded-full transform translate-x-1/2 -translate-y-1/4 opacity-75 hidden md:block"></div>
+        <div class="relative z-10 text-center md:text-left">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                Alvin Zhang
+            </h1>
+            <p class="text-xl text-gray-600 mb-6">
+                Alvin-1D0642
+            </p>
+            <div class="flex justify-center md:justify-start space-x-4">
+                <button id="detailInfoBtn" class="bg-[#70ad47] hover:bg-[#5a8d3a] text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                    详细信息
+                </button>
+                <button id="contactUsBtn" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out border border-gray-300">
+                    合作与联系
+                </button>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section class="mb-8 space-y-6 works-section">
-            <h2 class="text-2xl font-semibold text-blue-600 mb-4 transition-all 0.3s ease">我都做什么？</h2>
-            <div class="category-cards-container">
-                <div class="category-card" id="windows-category">
-                    <h3>Windows</h3>
-                    <ul>
-                        <li>致力于通知 Windows 更新、安装系统、发展史和整活等。</li>
-                        <li>会转载一些 Microsoft 宣传片。</li>
-                        <li>Windows 更新：通知新版 Windows 当中加入的新功能。</li>
-                        <li>安装系统：用虚拟机为大家录制 Windows 镜像安装的全过程 (从某种意义上和水视频差不多) (bushi)。</li>
-                        <li>发展史：Windows 各个部件的发展史 (暂不考虑更新)。</li>
-                        <li>整活：(大家应该明白是什么意思) 各种折腾 Windows 的骚操作，可能来自 Enderman。</li>
-                    </ul>
+    <div id="windows-section" class="w-full gradient-background py-16 px-4 md:px-24 lg:px-32 flex justify-start items-center relative overflow-hidden">
+        <div class="w-full md:w-1/2 lg:w-2/5 text-gray-800 relative z-10">
+            <h2 class="text-sm font-semibold mb-1 text-[#767171]">
+                喜好与主题
+            </h2>
+            <h3 class="text-4xl mb-8">
+                Windows
+            </h3>
+
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">
+                    Windows 更新
+                </h4>
+                <p class="text-gray-700">
+                    通知新版 Windows 当中加入的新功能
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">
+                    安装系统
+                </h4>
+                <p class="text-gray-700">
+                    用虚拟机为大家录制 Windows 镜像安装的全过程
+                    (从某些意义上和水视频差不多) (doge
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">
+                    发展史
+                </h4>
+                <p class="text-gray-700">
+                    Windows 各个部件的发展史 (暂不考虑更新)
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold mb-2">
+                    整活
+                </h4>
+                <p class="text-gray-700">
+                    (大家应该明白是什么意思) 各种折腾 Windows <span class="whitespace-nowrap">の 骚操作</span>
+                </p>
+            </div>
+        </div>
+        <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/f5b1a231215a1a451d5a94fa42b983369f257ad3/Transneutral_4K.png?raw=true" alt="抽象流体纹饰" class="absolute top-0 md:left-[calc(96px+50%)] lg:left-[calc(128px+40%)] w-full h-full object-cover hidden md:block">
+    </div>
+
+    <div class="w-full bg-[#dae3f3] py-32 px-4 md:px-24 lg:px-32 flex justify-start items-center relative overflow-hidden">
+        <div class="w-full md:w-1/2 lg:w-2/5 text-gray-800 relative z-10">
+            <h2 class="text-sm font-semibold mb-1 text-[#767171]">
+                喜好与主题
+            </h2>
+            <h3 class="text-4xl mb-8">
+                郑州轨交
+            </h3>
+
+            <p class="text-gray-700">
+                同样, 我也是郑州交通圈的一员, 闲来没事会给大家发些关于郑州地铁的新闻、运转、POV、科普。甚至做一个新线的混剪或宣传片练练特效, 或宣传新线。
+            </p>
+        </div>
+
+        <svg class="absolute right-[10%] top-1/2 transform -translate-y-1/2 h-32 w-auto hidden md:block z-0" viewBox="0 0 100 50" fill="#b4c7e7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L75 0 L100 25 L75 50 L0 50 L25 25 Z"/>
+        </svg>
+    </div>
+
+    <div class="w-full bg-[#fff2cc] py-24 px-4 md:px-24 lg:px-32 flex justify-start items-center relative overflow-hidden">
+        <div class="w-full md:w-1/2 lg:w-2/5 text-gray-800 relative z-10">
+            <h2 class="text-sm font-semibold mb-1 text-[#767171]">
+                喜好与主题
+            </h2>
+            <h3 class="text-4xl mb-8">
+                铁路科普
+            </h3>
+
+            <p class="text-gray-700">
+                聚焦机车、客车、货车、动车、特殊车辆、铁路局、线路等。立志做精准科普, 拒绝一切营销号和铁盲行为。在此系列当中, 希望您能观看到底并收藏转发。如内容出现质疑或需要补充改进, 请务必在评论区反馈。由于用图是直接从互联网中抓取, 如果原创是您, 请私信谈论解决方案。
+            </p>
+        </div>
+
+        <div class="absolute right-[10%] top-1/2 transform -translate-y-1/2 w-[300px] h-[300px] hidden md:block z-0">
+            <svg class="absolute top-[0%] left-[20%] w-[200px] h-[200px] z-10" viewBox="0 0 100 100" fill="#ffe699" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50"/>
+            </svg>
+            <svg class="absolute top-[35%] left-[0%] w-[200px] h-[200px] z-0" viewBox="0 0 100 100" fill="#f8cbad" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="w-full bg-[#f3ebf9] py-24 px-4 md:px-24 lg:px-32 flex justify-start items-center relative overflow-hidden">
+        <div class="w-full md:w-1/2 lg:w-2/5 text-gray-800 relative z-10">
+            <h2 class="text-sm font-semibold mb-1 text-[#767171]">
+                喜好与主题
+            </h2>
+            <h3 class="text-4xl mb-8">
+                CRVlog
+            </h3>
+
+            <p class="text-gray-700">
+                无配音、配文字讲解、BGM适当不浮夸.......
+            </p>
+            <p class="text-gray-700 mt-4">
+                主打有但不过度, 回归 CRVlog 本质。
+            </p>
+            <p class="text-gray-700 mt-4">
+                让您云端体验每一趟运转旅程
+            </p>
+        </div>
+
+        <div class="absolute right-[5%] top-[52%] transform -translate-y-1/2 hidden md:block z-0">
+            <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/32a9ddd0eaefeb8ec27a7bdc09b6fa49337845cf/CR.png?raw=true" alt="CR 装饰图片" class="w-[720px] h-auto object-contain">
+        </div>
+    </div>
+
+    <div id="contact-section" class="w-full contact-bg py-24 px-4 md:px-24 lg:px-32 flex flex-col items-start relative">
+        <div class="w-full text-gray-800 relative z-10 mb-8">
+            <h2 class="text-sm font-semibold mb-1 text-gray-700">
+                合作与联系
+            </h2>
+            <h3 class="text-4xl mb-8 text-gray-800">
+                保持常联系
+            </h3>
+        </div>
+
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            <a href="https://teams.live.com/l/invite/FEAsdg_ifvicI4otx4" target="_blank" rel="noopener noreferrer" class="mica-card rounded-xl p-6 flex items-center transition-all duration-300 hover:scale-105">
+                <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/b6e91c8e0317cea2b0a59f5eb4a66bb5d34389cc/Teams.png?raw=true" alt="Teams Icon" class="w-16 h-16 object-contain mr-4">
+                <div class="flex-grow flex flex-col">
+                    <h4 class="text-xl font-semibold mb-2 text-[#6c73ce]">Microsoft Teams</h4>
+                    <p class="text-gray-700">点击加入</p>
+                    <span class="text-[#6c73ce] font-medium flex items-center justify-end mt-4">
+                        加入
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle ml-2"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
                 </div>
-                <div class="category-card" id="zhengzhou-traffic-category">
-                    <h3>郑州交通</h3>
-                    <ul>
-                        <li>同样，我也是郑州交通圈的一员，闲来没事会给大家发一些关于郑州地铁的新闻、运转、POV、科普。</li>
-                        <li>甚至做一个新线的混剪或宣传片练练特效，或宣传新线。</li>
-                        <li>暂时不考虑更新</li>
-                    </ul>
-                </div>
-                <div class="category-card" id="railway-science-category">
-                    <h3 style="margin-bottom: 1rem;">铁路科普</h3>
-                    <ul style="padding-left: 0;">
-                        <li style="margin-bottom: 0.25rem;">铁路科普：记录解放和SS8 000系列通过的列车，</li>
-                        <li style="margin-bottom: 0.25rem;">为大家推荐较为优异的郑州拍车机位。</li>
-                        <li>关键词：铁路科普、拍车</li>
-                    </ul>
+            </a>
+
+            <div class="mica-card rounded-xl p-6 flex items-center transition-all duration-300 hover:scale-105">
+                <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/b6e91c8e0317cea2b0a59f5eb4a66bb5d34389cc/QQ.png?raw=true" alt="QQ Icon" class="w-16 h-16 object-contain mr-4">
+                <div class="flex-grow flex flex-col">
+                    <h4 class="text-xl font-semibold mb-2 text-[#ee2d36]">QQ</h4>
+                    <p class="text-gray-700">2150847364</p>
+                    <p class="text-[#ee2d36] italic text-right mt-4">(请备注来意)</p>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer class="text-center mt-8 text-gray-500 text-sm transition-all 0.3s ease">
-        <p>© 2025 Alvin-1D0642</p>
+            <a href="https://space.bilibili.com/1441723022?spm_id_from=333.1365.0.0" target="_blank" rel="noopener noreferrer" class="mica-card rounded-xl p-6 flex items-center transition-all duration-300 hover:scale-105">
+                <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/b6e91c8e0317cea2b0a59f5eb4a66bb5d34389cc/BiliBili%202.png?raw=true" alt="BiliBili Icon" class="w-16 h-16 object-contain mr-4">
+                <div class="flex-grow flex flex-col">
+                    <h4 class="text-xl font-semibold mb-2 text-[#00affe]">BiliBili</h4>
+                    <p class="text-gray-700">Alvin-1D0642</p>
+                    <span class="text-[#00affe] font-medium flex items-center justify-end mt-4">
+                        前往
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle ml-2"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <a href="youtu.be/@alvin-1d0642" target="_blank" rel="noopener noreferrer" class="mica-card rounded-xl p-6 flex items-center transition-all duration-300 hover:scale-105">
+                <img src="https://github.com/Alvin1419081/alvin1419081.github.io/blob/b6e91c8e0317cea2b0a59f5eb4a66bb5d34389cc/Youtube-Logo-2.png?raw=true" alt="YouTube Icon" class="w-16 h-16 object-contain mr-4">
+                <div class="flex-grow flex flex-col">
+                    <h4 class="text-xl font-semibold mb-2 text-[#ff0033]">YouTube</h4>
+                    <p class="text-gray-700">Alvin-1D0642</p>
+                    <span class="text-[#ff0033] font-medium flex items-center justify-end mt-4">
+                        前往
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle ml-2"><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4"/></svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="w-full text-center py-8 text-gray-500 text-sm">
+        <p>Copyright 2025 Alvin Zhang</p>
     </footer>
+
+    <script>
+        // 获取按钮元素
+        const detailInfoBtn = document.getElementById('detailInfoBtn');
+        const contactUsBtn = document.getElementById('contactUsBtn');
+
+        // 获取目标区域元素
+        const windowsSection = document.getElementById('windows-section');
+        const contactSection = document.getElementById('contact-section');
+
+        // 为“详细信息”按钮添加点击事件监听器
+        detailInfoBtn.addEventListener('click', () => {
+            if (windowsSection) {
+                windowsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // 为“合作与联系”按钮添加点击事件监听器
+        contactUsBtn.addEventListener('click', () => {
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+
 </body>
 </html>
