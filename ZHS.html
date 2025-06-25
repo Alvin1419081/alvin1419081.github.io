@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2506 同学录 - Alvin Zhang PerWeb</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        :root {
+            --primary: #0A7E07;
+            --primary-container: #E2F0D9;
+            --on-primary-container: #002204;
+            --surface: #F9FBF8;
+            --surface-container: #ECEFEB;
+            --on-surface: #1A1C19;
+            --outline: #74796F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: var(--outline) transparent;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--surface);
+            color: var(--on-surface);
+            line-height: 1.6;
+        }
+
+        .top-section {
+            background-color: var(--primary-container);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+        }
+
+        .top-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .top-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.08;
+        }
+
+        .top-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .top-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--on-surface);
+        }
+
+        .top-content p {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background-color: var(--surface-container);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title .material-symbols-outlined {
+            font-size: 1.8rem;
+        }
+
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .hobby-card {
+            background-color: var(--primary-container);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .hobby-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .hobby-card p {
+            font-size: 0.95rem;
+            color: var(--on-surface);
+            opacity: 0.8;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .message-card {
+            background-color: var(--surface-container);
+            border-radius: 20px;
+            padding: 32px;
+            /* Adjust padding for no h3 */
+            padding-top: 24px;
+        }
+
+        /* Adjust message-card to remove h3 spacing */
+        .message-card:not(:has(h3)) {
+            padding-top: 32px; /* Restore original padding if no h3 is present */
+        }
+        
+        .message-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .message-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .english-message {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+            border-left: 3px solid var(--primary);
+            background-color: rgba(10, 126, 7, 0.05);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--primary-container);
+            border-radius: 16px;
+            padding: 18px 24px;
+            text-decoration: none;
+            color: var(--on-surface);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: #b2d8b3;
+        }
+
+        .contact-text {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .qq-note {
+            background-color: var(--surface-container);
+            border-radius: 16px;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qq-text {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .note-text {
+            font-style: italic;
+            color: var(--outline);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--outline);
+            font-size: 0.9rem;
+            background-color: var(--surface-container);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .top-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .top-content p {
+                font-size: 1.4rem;
+            }
+
+            .section {
+                padding: 24px 16px;
+            }
+
+            .hobbies-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部区域 -->
+    <div class="top-section">
+        <div class="top-content">
+            <h1>张皓淞 - 2506 同学录</h1>
+            <p>永远是同学</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 爱好部分 -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="material-symbols-outlined">favorite</span>
+                我的爱好
+            </h2>
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">piano</span>
+                    <h3>弹钢琴</h3>
+                    <p>十级技艺，但忘得差不多了（</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">design_services</span>
+                    <h3>视觉设计</h3>
+                    <p>优化媒体制作、应用等视觉元素，让视觉与创意碰撞</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">movie</span>
+                    <h3>视频剪辑</h3>
+                    <p>服务于前期，让普通镜头创造动人的故事</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">animation</span>
+                    <h3>动画制作</h3>
+                    <p>服务于剪辑的修饰性动画，增强视频艺术性</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">train</span>
+                    <h3>铁道迷</h3>
+                    <p>铁道迷要从小培养 doge</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="material-symbols-outlined hobby-icon">flight</span>
+                    <h3>飞友</h3>
+                    <p>空铁一家亲~</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 毕业寄语部分 -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                毕业寄语
+            </h2>
+            <div class="message-container">
+                <div class="message-card">
+                    <!-- Removed h3 for "英语寄语" -->
+                    <div class="english-message">
+                        "Dreams to chase, each and every day,<br>
+                        Keep the doubt and fears at bay.<br>
+                        Step by step, mile by mile,<br>
+                        Perseverance makes the journey so worthwhile.<br>
+                        Together we've come this long way,<br>
+                        Now we part to seek dreams that hold sway.<br>
+                        Please wave bye, but always recall,<br>
+                        We're classmates - forever above all."<br>
+                    </div>
+                </div>
+
+                <div class="message-card">
+                    <!-- Removed h3 for "中文寄语" -->
+                    <p>
+                        追逐梦想，每一天，<br>
+                        远离怀疑和恐惧。<br>
+                        一步一步，一里又一里，<br>
+                        坚持让征途精彩纷呈。<br><br>
+                        而今我们携手走到这里，<br>
+                        转身奔向各自的天地。<br>
+                        启程吧，<br>
+                        但请铭记，<br>
+                        我们永远是同学。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式部分 -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="material-symbols-outlined">contacts</span>
+                联系我
+            </h2>
+            <div class="contact-container">
+                <a href="https://space.bilibili.com/1441723022?spm_id_from=333.1365.0.0" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-text">BiliBili: Alvin-1D0642</span>
+                    <span class="contact-icon">
+                        前往 <span class="material-symbols-outlined">arrow_forward</span>
+                    </span>
+                </a>
+                <a href="https://youtu.be/@alvin-1d0642" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-text">YouTube: Alvin-1D0642</span>
+                    <span class="contact-icon">
+                        前往 <span class="material-symbols-outlined">arrow_forward</span>
+                    </span>
+                </a>
+                <div class="qq-note">
+                    <span class="qq-text">QQ: 2150847364</span>
+                    <span class="note-text">(请备注来意)</span>
+                </div>
+                <a href="https://teams.live.com/l/invite/FEAsdg_ifvicI4otx4" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-text">Microsoft Teams</span>
+                    <span class="contact-icon">
+                        加入 <span class="material-symbols-outlined">arrow_forward</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Alvin-1D042</p>
+    </footer>
+</body>
+</html>
