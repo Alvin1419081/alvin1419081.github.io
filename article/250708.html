@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windows 11 新版管理员保护模式：安全性与可用性的再平衡</title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+  }
+
+  .markdown-body .octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+  }
+
+  .markdown-body .anchor {
+    float: left;
+    line-height: 1;
+    margin-left: -20px;
+    padding-right: 4px;
+  }
+
+  .markdown-body .anchor:focus {
+    outline: none;
+  }
+
+  .markdown-body h1 .octicon-link,
+  .markdown-body h2 .octicon-link,
+  .markdown-body h3 .octicon-link,
+  .markdown-body h4 .octicon-link,
+  .markdown-body h5 .octicon-link,
+  .markdown-body h6 .octicon-link {
+    color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden;
+  }
+
+  .markdown-body h1:hover .anchor,
+  .markdown-body h2:hover .anchor,
+  .markdown-body h3:hover .anchor,
+  .markdown-body h4:hover .anchor,
+  .markdown-body h5:hover .anchor,
+  .markdown-body h6:hover .anchor {
+    text-decoration: none;
+  }
+
+  .markdown-body h1:hover .anchor .octicon-link,
+  .markdown-body h2:hover .anchor .octicon-link,
+  .markdown-body h3:hover .anchor .octicon-link,
+  .markdown-body h4:hover .anchor .octicon-link,
+  .markdown-body h5:hover .anchor .octicon-link,
+  .markdown-body h6:hover .anchor .octicon-link {
+    visibility: visible;
+  }
+
+  .markdown-body {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #24292e;
+    line-height: 1.5;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  .markdown-body .pl-c {
+    color: #6a737d;
+  }
+
+  .markdown-body .pl-c1,
+  .markdown-body .pl-s .pl-v {
+    color: #005cc5;
+  }
+
+  .markdown-body .pl-e,
+  .markdown-body .pl-en {
+    color: #6f42c1;
+  }
+
+  .markdown-body .pl-s .pl-s1,
+  .markdown-body .pl-smi {
+    color: #24292e;
+  }
+
+  .markdown-body .pl-ent {
+    color: #22863a;
+  }
+
+  .markdown-body .pl-k {
+    color: #d73a49;
+  }
+
+  .markdown-body .pl-pds,
+  .markdown-body .pl-s,
+  .markdown-body .pl-s .pl-pse .pl-s1,
+  .markdown-body .pl-sr,
+  .markdown-body .pl-sr .pl-cce,
+  .markdown-body .pl-sr .pl-sra,
+  .markdown-body .pl-sr .pl-sre {
+    color: #032f62;
+  }
+
+  .markdown-body .pl-smw,
+  .markdown-body .pl-v {
+    color: #e36209;
+  }
+
+  .markdown-body .pl-bu {
+    color: #b31d28;
+  }
+
+  .markdown-body .pl-ii {
+    background-color: #b31d28;
+    color: #fafbfc;
+  }
+
+  .markdown-body .pl-c2 {
+    background-color: #d73a49;
+    color: #fafbfc;
+  }
+
+  .markdown-body .pl-c2:before {
+    content: "^M";
+  }
+
+  .markdown-body .pl-sr .pl-cce {
+    color: #22863a;
+    font-weight: 700;
+  }
+
+  .markdown-body .pl-ml {
+    color: #735c0f;
+  }
+
+  .markdown-body .pl-mh,
+  .markdown-body .pl-mh .pl-en,
+  .markdown-body .pl-ms {
+    color: #005cc5;
+    font-weight: 700;
+  }
+
+  .markdown-body .pl-mi {
+    color: #24292e;
+    font-style: italic;
+  }
+
+  .markdown-body .pl-mb {
+    color: #24292e;
+    font-weight: 700;
+  }
+
+  .markdown-body .pl-md {
+    background-color: #ffeef0;
+    color: #b31d28;
+  }
+
+  .markdown-body .pl-mi1 {
+    background-color: #f0fff4;
+    color: #22863a;
+  }
+
+  .markdown-body .pl-mc {
+    background-color: #ffebda;
+    color: #e36209;
+  }
+
+  .markdown-body .pl-mi2 {
+    background-color: #005cc5;
+    color: #f6f8fa;
+  }
+
+  .markdown-body .pl-mdr {
+    color: #6f42c1;
+    font-weight: 700;
+  }
+
+  .markdown-body .pl-ba {
+    color: #586069;
+  }
+
+  .markdown-body .pl-sg {
+    color: #959da5;
+  }
+
+  .markdown-body .pl-corl {
+    color: #032f62;
+    text-decoration: underline;
+  }
+
+  .markdown-body details {
+    display: block;
+  }
+
+  .markdown-body summary {
+    display: list-item;
+  }
+
+  .markdown-body a {
+    background-color: transparent;
+  }
+
+  .markdown-body a:active,
+  .markdown-body a:hover {
+    outline-width: 0;
+  }
+
+  .markdown-body strong {
+    font-weight: inherit;
+    font-weight: bolder;
+  }
+
+  .markdown-body h1 {
+    font-size: 2em;
+    margin: .67em 0;
+  }
+
+  .markdown-body img {
+    border-style: none;
+  }
+
+  .markdown-body code,
+  .markdown-body kbd,
+  .markdown-body pre {
+    font-family: monospace,monospace;
+    font-size: 1em;
+  }
+
+  .markdown-body hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+
+  .markdown-body input {
+    font: inherit;
+    margin: 0;
+  }
+
+  .markdown-body input {
+    overflow: visible;
+  }
+
+  .markdown-body [type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .markdown-body * {
+    box-sizing: border-box;
+  }
+
+  .markdown-body input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .markdown-body a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+
+  .markdown-body a:hover {
+    text-decoration: underline;
+  }
+
+  .markdown-body strong {
+    font-weight: 600;
+  }
+
+  .markdown-body hr {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #dfe2e5;
+    height: .25em;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+
+  .markdown-body hr:before {
+    content: "";
+    display: table;
+  }
+
+  .markdown-body hr:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  .markdown-body table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .markdown-body td,
+  .markdown-body th {
+    padding: 0;
+  }
+
+  .markdown-body details summary {
+    cursor: pointer;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4,
+  .markdown-body h5,
+  .markdown-body h6 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .markdown-body h1 {
+    font-size: 32px;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2 {
+    font-weight: 600;
+  }
+
+  .markdown-body h2 {
+    font-size: 24px;
+  }
+
+  .markdown-body h3 {
+    font-size: 20px;
+  }
+
+  .markdown-body h3,
+  .markdown-body h4 {
+    font-weight: 600;
+  }
+
+  .markdown-body h4 {
+    font-size: 16px;
+  }
+
+  .markdown-body h5 {
+    font-size: 14px;
+  }
+
+  .markdown-body h5,
+  .markdown-body h6 {
+    font-weight: 600;
+  }
+
+  .markdown-body h6 {
+    color: #6a737d;
+    font-size: .85em;
+  }
+
+  .markdown-body p {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .markdown-body blockquote {
+    margin: 0;
+  }
+
+  .markdown-body ol,
+  .markdown-body ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .markdown-body ol ol,
+  .markdown-body ul ol {
+    list-style-type: lower-roman;
+  }
+
+  .markdown-body ol ol ol,
+  .markdown-body ol ul ol,
+  .markdown-body ul ol ol,
+  .markdown-body ul ul ol {
+    list-style-type: lower-alpha;
+  }
+
+  .markdown-body dd {
+    margin-left: 0;
+  }
+
+  .markdown-body code,
+  .markdown-body pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 12px;
+  }
+
+  .markdown-body pre {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .markdown-body input::-webkit-inner-spin-button,
+  .markdown-body input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  .markdown-body .border {
+    border: 1px solid #e1e4e8!important;
+  }
+
+  .markdown-body .border-0 {
+    border: 0!important;
+  }
+
+  .markdown-body .border-bottom {
+    border-bottom: 1px solid #e1e4e8!important;
+  }
+
+  .markdown-body .rounded-1 {
+    border-radius: 3px!important;
+  }
+
+  .markdown-body .bg-white {
+    background-color: #fff!important;
+  }
+
+  .markdown-body .bg-gray-light {
+    background-color: #fafbfc!important;
+  }
+
+  .markdown-body .text-gray-light {
+    color: #6a737d!important;
+  }
+
+  .markdown-body .mb-0 {
+    margin-bottom: 0!important;
+  }
+
+  .markdown-body .my-2 {
+    margin-bottom: 8px!important;
+    margin-top: 8px!important;
+  }
+
+  .markdown-body .pl-0 {
+    padding-left: 0!important;
+  }
+
+  .markdown-body .py-0 {
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+  }
+
+  .markdown-body .pl-1 {
+    padding-left: 4px!important;
+  }
+
+  .markdown-body .pl-2 {
+    padding-left: 8px!important;
+  }
+
+  .markdown-body .py-2 {
+    padding-bottom: 8px!important;
+    padding-top: 8px!important;
+  }
+
+  .markdown-body .pl-3,
+  .markdown-body .px-3 {
+    padding-left: 16px!important;
+  }
+
+  .markdown-body .px-3 {
+    padding-right: 16px!important;
+  }
+
+  .markdown-body .pl-4 {
+    padding-left: 24px!important;
+  }
+
+  .markdown-body .pl-5 {
+    padding-left: 32px!important;
+  }
+
+  .markdown-body .pl-6 {
+    padding-left: 40px!important;
+  }
+
+  .markdown-body .f6 {
+    font-size: 12px!important;
+  }
+
+  .markdown-body .lh-condensed {
+    line-height: 1.25!important;
+  }
+
+  .markdown-body .text-bold {
+    font-weight: 600!important;
+  }
+
+  .markdown-body:before {
+    content: "";
+    display: table;
+  }
+
+  .markdown-body:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  .markdown-body>:first-child {
+    margin-top: 0!important;
+  }
+
+  .markdown-body>:last-child {
+    margin-bottom: 0!important;
+  }
+
+  .markdown-body a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .markdown-body blockquote,
+  .markdown-body dl,
+  .markdown-body ol,
+  .markdown-body p,
+  .markdown-body pre,
+  .markdown-body table,
+  .markdown-body ul {
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .markdown-body hr {
+    background-color: #e1e4e8;
+    border: 0;
+    height: .25em;
+    margin: 24px 0;
+    padding: 0;
+  }
+
+  .markdown-body blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
+  }
+
+  .markdown-body blockquote>:first-child {
+    margin-top: 0;
+  }
+
+  .markdown-body blockquote>:last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-body kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4,
+  .markdown-body h5,
+  .markdown-body h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 24px;
+  }
+
+  .markdown-body h1 {
+    font-size: 2em;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: .3em;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.5em;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.25em;
+  }
+
+  .markdown-body h4 {
+    font-size: 1em;
+  }
+
+  .markdown-body h5 {
+    font-size: .875em;
+  }
+
+  .markdown-body h6 {
+    color: #6a737d;
+    font-size: .85em;
+  }
+
+  .markdown-body ol,
+  .markdown-body ul {
+    padding-left: 2em;
+  }
+
+  .markdown-body ol ol,
+  .markdown-body ol ul,
+  .markdown-body ul ol,
+  .markdown-body ul ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .markdown-body li {
+    word-wrap: break-all;
+  }
+
+  .markdown-body li>p {
+    margin-top: 16px;
+  }
+
+  .markdown-body li+li {
+    margin-top: .25em;
+  }
+
+  .markdown-body dl {
+    padding: 0;
+  }
+
+  .markdown-body dl dt {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .markdown-body dl dd {
+    margin-bottom: 16px;
+    padding: 0 16px;
+  }
+
+  .markdown-body table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .markdown-body table th {
+    font-weight: 600;
+  }
+
+  .markdown-body table td,
+  .markdown-body table th {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+  }
+
+  .markdown-body table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+  }
+
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+
+  .markdown-body img {
+    background-color: #fff;
+    box-sizing: content-box;
+    max-width: 100%;
+  }
+
+  .markdown-body img[align=right] {
+    padding-left: 20px;
+  }
+
+  .markdown-body img[align=left] {
+    padding-right: 20px;
+  }
+
+  .markdown-body code {
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: .2em .4em;
+  }
+
+  .markdown-body pre {
+    word-wrap: normal;
+  }
+
+  .markdown-body pre>code {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .markdown-body .highlight {
+    margin-bottom: 16px;
+  }
+
+  .markdown-body .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
+  }
+
+  .markdown-body .highlight pre,
+  .markdown-body pre {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
+  }
+
+  .markdown-body pre code {
+    background-color: transparent;
+    border: 0;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    max-width: auto;
+    overflow: visible;
+    padding: 0;
+    word-wrap: normal;
+  }
+
+  .markdown-body .commit-tease-sha {
+    color: #444d56;
+    display: inline-block;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 90%;
+  }
+
+  .markdown-body .blob-wrapper {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .markdown-body .blob-wrapper-embedded {
+    max-height: 240px;
+    overflow-y: auto;
+  }
+
+  .markdown-body .blob-num {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    color: rgba(27,31,35,.3);
+    cursor: pointer;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 12px;
+    line-height: 20px;
+    min-width: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+    user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 1%;
+  }
+
+  .markdown-body .blob-num:hover {
+    color: rgba(27,31,35,.6);
+  }
+
+  .markdown-body .blob-num:before {
+    content: attr(data-line-number);
+  }
+
+  .markdown-body .blob-code {
+    line-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    vertical-align: top;
+  }
+
+  .markdown-body .blob-code-inner {
+    color: #24292e;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 12px;
+    overflow: visible;
+    white-space: pre;
+    word-wrap: normal;
+  }
+
+  .markdown-body .pl-token.active,
+  .markdown-body .pl-token:hover {
+    background: #ffea7f;
+    cursor: pointer;
+  }
+
+  .markdown-body kbd {
+    background-color: #fafbfc;
+    border: 1px solid #d1d5da;
+    border-bottom-color: #c6cbd1;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #c6cbd1;
+    color: #444d56;
+    display: inline-block;
+    font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+  }
+
+  .markdown-body :checked+.radio-label {
+    border-color: #0366d6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .markdown-body .tab-size[data-tab-size="1"] {
+    -moz-tab-size: 1;
+    tab-size: 1;
+  }
+
+  .markdown-body .tab-size[data-tab-size="2"] {
+    -moz-tab-size: 2;
+    tab-size: 2;
+  }
+
+  .markdown-body .tab-size[data-tab-size="3"] {
+    -moz-tab-size: 3;
+    tab-size: 3;
+  }
+
+  .markdown-body .tab-size[data-tab-size="4"] {
+    -moz-tab-size: 4;
+    tab-size: 4;
+  }
+
+  .markdown-body .tab-size[data-tab-size="5"] {
+    -moz-tab-size: 5;
+    tab-size: 5;
+  }
+
+  .markdown-body .tab-size[data-tab-size="6"] {
+    -moz-tab-size: 6;
+    tab-size: 6;
+  }
+
+  .markdown-body .tab-size[data-tab-size="7"] {
+    -moz-tab-size: 7;
+    tab-size: 7;
+  }
+
+  .markdown-body .tab-size[data-tab-size="8"] {
+    -moz-tab-size: 8;
+    tab-size: 8;
+  }
+
+  .markdown-body .tab-size[data-tab-size="9"] {
+    -moz-tab-size: 9;
+    tab-size: 9;
+  }
+
+  .markdown-body .tab-size[data-tab-size="10"] {
+    -moz-tab-size: 10;
+    tab-size: 10;
+  }
+
+  .markdown-body .tab-size[data-tab-size="11"] {
+    -moz-tab-size: 11;
+    tab-size: 11;
+  }
+
+  .markdown-body .tab-size[data-tab-size="12"] {
+    -moz-tab-size: 12;
+    tab-size: 12;
+  }
+
+  .markdown-body .task-list-item {
+    list-style-type: none;
+  }
+
+  .markdown-body .task-list-item+.task-list-item {
+    margin-top: 3px;
+  }
+
+  .markdown-body .task-list-item input {
+    margin: 0 .2em .25em -1.6em;
+    vertical-align: middle;
+  }
+
+  .markdown-body hr {
+    border-bottom-color: #eee;
+  }
+
+  .markdown-body .pl-0 {
+    padding-left: 0!important;
+  }
+
+  .markdown-body .pl-1 {
+    padding-left: 4px!important;
+  }
+
+  .markdown-body .pl-2 {
+    padding-left: 8px!important;
+  }
+
+  .markdown-body .pl-3 {
+    padding-left: 16px!important;
+  }
+
+  .markdown-body .pl-4 {
+    padding-left: 24px!important;
+  }
+
+  .markdown-body .pl-5 {
+    padding-left: 32px!important;
+  }
+
+  .markdown-body .pl-6 {
+    padding-left: 40px!important;
+  }
+
+  .markdown-body .pl-7 {
+    padding-left: 48px!important;
+  }
+
+  .markdown-body .pl-8 {
+    padding-left: 64px!important;
+  }
+
+  .markdown-body .pl-9 {
+    padding-left: 80px!important;
+  }
+
+  .markdown-body .pl-10 {
+    padding-left: 96px!important;
+  }
+
+  .markdown-body .pl-11 {
+    padding-left: 112px!important;
+  }
+
+  .markdown-body .pl-12 {
+    padding-left: 128px!important;
+  }
+
+  </style>
+  <style>
+  /**
+  * prism.js default theme for JavaScript, CSS and HTML
+  * Based on dabblet (http://dabblet.com)
+  * @author Lea Verou
+  */
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background: #b3d4fc;
+  }
+
+  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+  code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+  }
+
+  @media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      text-shadow: none;
+    }
+  }
+
+  /* Code blocks */
+  pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+  }
+
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: #f5f2f0;
+  }
+
+  /* Inline code */
+  :not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: slategray;
+  }
+
+  .token.punctuation {
+    color: #999;
+  }
+
+  .token.namespace {
+    opacity: .7;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #905;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #690;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    color: #9a6e3a;
+    /* This background color was intended by the author of this theme. */
+    background: hsla(0, 0%, 100%, .5);
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: #07a;
+  }
+
+  .token.function,
+  .token.class-name {
+    color: #DD4A68;
+  }
+
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: #e90;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  </style>
+  <style>
+  
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+</style>
+  <style>
+    /* 顶栏样式 */
+    .top-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 45px;
+      background-color: rgba(242, 242, 242, 0.8); /* 稍微透明的背景色 */
+      border-bottom: 1px solid #e0e0e0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      position: sticky; /* 使顶栏固定在顶部 */
+      top: 0;
+      z-index: 1000; /* 确保顶栏在其他内容之上 */
+      backdrop-filter: blur(10px); /* 毛玻璃效果 */
+      -webkit-backdrop-filter: blur(10px); /* 兼容性前缀 */
+    }
+
+    .top-navbar .logo a {
+      font-weight: 600;
+      font-size: 18px;
+      color: #000; /* 黑色文字 */
+      text-decoration: none;
+    }
+
+    .top-navbar .logo a:hover {
+      text-decoration: underline;
+    }
+
+    /* 底部版权信息样式 */
+    .footer-copyright {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #f2f2f2; /* 与顶栏保持一致的背景色 */
+      border-top: 1px solid #e0e0e0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* 调整 markdown-body 的上边距，避免被顶栏遮挡 */
+    body {
+      margin-top: 0; /* 移除默认的body margin */
+    }
+    .markdown-body {
+      padding-top: 20px; /* 为内容区域增加顶部填充，避免被固定顶栏遮挡 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶栏开始 -->
+  <div class="top-navbar">
+    <div class="logo">
+      <a href="https://alvin1419081.github.io">Alvin-1D0642</a>
+    </div>
+    <!-- 这里可以添加其他导航链接或搜索框，如果需要的话 -->
+  </div>
+  <!-- 顶栏结束 -->
+
+  <article class="markdown-body">
+    <h2 class="setext" id="windows-11-新版管理员保护模式：安全性与可用性的再平衡">Windows 11 新版管理员保护模式：安全性与可用性的再平衡</h2>
+    <p><strong>摘要:</strong> 本文旨在探讨微软在 Windows 11 Insider Preview Build 26120.4520 中引入的一项重要安全更新——新版“管理员保护模式”（亦称“管理员审批模式”）。通过与传统的用户帐户控制（UAC）“提升模式”进行对比，本文将深入分析其核心机制、配置选项、安全优势，并重点剖析其在当前阶段存在的显著缺陷，特别是对第三方软件兼容性的巨大影响。</p>
+    <p><strong>关键词:</strong> Windows 11, 管理员保护模式, UAC, 安全性, 凭据销毁, 兼容性</p>
+    <hr>
+    <h3 class="atx" id="1-引言">1. 引言</h3>
+    <p>用户帐户控制（User Account Control, UAC）自 Windows Vista 以来，一直是 Windows 操作系统安全体系中的基石。其核心目标是通过要求用户确认需要管理员权限的操作，来防止恶意软件未经授权对系统进行更改。传统的 UAC 主要以“提升模式”（Elevated Mode）运行，即在用户批准后，为应用程序授予一个具有管理员权限的安全令牌，直至该程序关闭。</p>
+    <p>然而，随着网络安全威胁的不断演进，这种模式下的安全令牌仍有被恶意利用的风险。为此，微软在 Windows 11 的预览版本中，推出了一个更为激进的安全选项——“管理员保护模式”（Administrator Protection Mode）。该模式的核心思想是 <strong>即时授权，即时销毁</strong>，旨在通过最小化管理员权限的暴露窗口，来进一步加固系统安全防线。</p>
+    <img style="zoom:50%;" alt="Admin_pro_principle" title="" src="https://raw.dgithub.xyz/Alvin1419081/alvin1419081.github.io/refs/heads/main/Admin_pro_principle.png">
+
+    <blockquote>
+    <p>图：Windows 11 管理员保护功能实现原理 - Microsoft（图像经 Google Translate 翻译）</p>
+    </blockquote>
+    <h3 class="atx" id="2-术语与激活">2. 术语与激活</h3>
+    <p>为了清晰地讨论，我们首先定义相关术语：</p>
+    <ul>
+    <li><p><strong>旧版模式</strong>: 指传统的 UAC “提升模式”。</p>
+    </li>
+    <li><p><strong>新版模式</strong>: 指新增的“管理员保护模式”或称“管理员审批模式”。</p>
+    </li>
+    </ul>
+    <p>与传统 UAC 不同，新模式默认关闭。用户需要手动开启：</p>
+    <ol>
+    <li><p>导航至 <strong>Windows 安全中心</strong> &gt; <strong>账户保护</strong> &gt; <strong>管理员保护</strong>。</p>
+    </li>
+    <li><p>开启该功能。</p>
+    <img style="zoom:67%;" alt="" title="" src="https://filestore.community.support.microsoft.com/api/images/3ccd9e0e-b8f0-477b-9d76-186fd15988eb?upload=true&amp;fud_access=hC1SxZhn7m%252FZQJkOIiOVstu10yTQgXS4A%252FDBzZTg8nbaCgIogkrcDydMeI5Y4za2dOqDdWtsG2JNS3E35V60i9TiGHR7STMpJHheeXuDvO8nwjUlqCBHhJ0NDvuYN7OSiM%252BQCbbJ%252F3cpJ81GHsSP2PvNd2yIRZgeDyp8oyrer3ySARGbh6cgloKgZhXQ6tnV0QXPaqEk7EvKqE77QqKG0toOWc9Xc2lUy6u2eIdcVRGQFkce5Oq2%252BejYu61CQZFuZ1n7F8Kvq%252BU1gv0Us9nJlTAxJflJ288h%252F18I%252F2rxoLBeeuXiuPAQwdsiX8oZXLbzyXj3tr73itBa2KkNt3RFI9gkyObuUWS010Jb7UeZvNFHhAUQVt5FJRrufqF%252Fow5l7f63Pi0mPIaOs%252BN6S5dunk71QUoFazZGqNwm0oQwkDw%253D">
+
+    </li>
+    </ol>
+    <p>一旦管理员保护模式被激活，控制面板中原有的 UAC 设置滑块将<strong>不再可用</strong>，所有权限提升请求都将由新模式接管。</p>
+    <img style="zoom:67%;" alt="" src="https://filestore.community.support.microsoft.com/api/images/d40b8846-faf9-4d9e-8c13-9e5a223bfb3e?upload=true&amp;fud_access=hC1SxZhn7m%252FZQJkOIiOVstu10yTQgXS4A%252FDBzZTg8nbaCgIogkrcDydMeI5Y4za2dOqDdWtsG2JNS3E35V60i9TiGHR7STMpJHheeXuDvO8nwjUlqCBHhJ0NDvuYN7OSiM%252BQCbbJ%252F3cpJ81GHsSP2PvNd2yIRZgeDyp8oyrer3ySARGbh6cgloKgZhXQ6tnV0QXPaqEk7EvKqE77QqKG0toOWc9Xc2lUy6u2eIdcVRGDv%252Fh0PsG9wMCF5f7tVhJOjVfOL5bamIImFh%252BP1rg3LHm4dUJKFcBoATydV8l5mE1qjywl7RB8Y1Z5HjXaPnNjtiNjikTSYMX%252FPKXlLbfhhqfTxsWDY2Nez6GsDmdAWSnToPgLxXfdfr6rQ7T9S4EluHn9NTNQWVLTWCQufSk8hi708bYkoNROKLlKafe4IQQ%253D" title="">
+
+    <blockquote>
+    <p>图：无法使用旧版 UAC 设置界面</p>
+    </blockquote>
+    <h3 class="atx" id="3-配置与机制对比">3. 配置与机制对比</h3>
+    <p>新旧两种模式在配置自由度和运行机制上存在显著差异。</p>
+    <table>
+    <thead>
+    <tr>
+    <th>特性</th>
+    <th>旧版：提升模式 (Elevated Mode)</th>
+    <th>新版：管理员保护模式 (Admin Protection Mode)</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td><strong>核心机制</strong></td>
+    <td>授予进程一个可持续的管理员令牌</td>
+    <td>仅在操作瞬间授予权限，凭据用后即毁</td>
+    </tr>
+    <tr>
+    <td><strong>配置灵活度</strong></td>
+    <td>高。可通过本地安全策略自定义，如是否使用安全桌面、是否需要 Windows Hello 等</td>
+    <td>低。开发尚不完善，设置项极少</td>
+    </tr>
+    <tr>
+    <td><strong>安全桌面</strong></td>
+    <td>可选。用户可配置是否在安全桌面（变暗的桌面）显示 UAC 弹窗</td>
+    <td><strong>强制</strong>。所有 UAC 弹窗必须在安全桌面中进行，对低性能设备可能造成卡顿</td>
+    </tr>
+    <tr>
+    <td><strong>生物识别</strong></td>
+    <td>可选与 Windows Hello 集成</td>
+    <td>默认需要 Windows Hello 验证，但可通过本地安全策略取消</td>
+    </tr>
+    </tbody></table>
+    <p>新模式最核心的变化在于其强制性的安全措施，尤其是强制安全桌面，这确保了 UAC 提示本身不会被其他程序所欺骗或劫持，但也牺牲了一部分性能和用户体验。</p>
+    <p><img style="zoom:100%;" alt="" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Comprehensive-security-panel-2-content-card-3?scl=1" title=""></p>
+<img style="zoom:86%;" alt="" src="https://filestore.community.support.microsoft.com/api/images/4e55c859-19ee-487c-9bdd-59ec4fa64280?upload=true&amp;fud_access=hC1SxZhn7m%252FZQJkOIiOVstu10yTQgXS4A%252FDBzZTg8nbaCgIogkrcDydMeI5Y4za2dOqDdWtsG2JNS3E35V60i9TiGHR7STMpJHheeXuDvO8nwjUlqCBHhJ0NDvuYN7OSiM%252BQCbbJ%252F3cpJ81GHsSP2PvNd2yIRZgeDyp8oyrer3ySARGbh6cgloKgZhXQ6tnV0QXPaqEk7EvKqE77QqKG0toOWc9Xc2lUy6u2eIdcVREnedyKc%252FTPQmDIIUgJ3FdPlttChThgzOTlAyxGCVs5bfg0W0lrb%252BCb4M00P%252BaKHqGAltF2VP4n1PbOUqB8my23MeKARjUyv2jhGXQVvhyrXKx2aXp7LWLCjMJNxiLmIHJAETwpIm7b%252F3xlKlwCW8JEDR7T8Qhic0cPA5jibI5TKhmPfVSuaSoKmFSDNVvwMPc%253D" title=""></p>
+    <blockquote>
+    <p>图1：Windows Hello - Microsoft</p>
+    图2：使用本地安全策略关闭 Windows Hello（本地安全策略&gt;本地策略&gt;安全选项 中的 “用户帐户控制:在启用管理员保护的情况下管理员的提升权限提示行为”）</p>
+    </blockquote>
+    <h3 class="atx" id="4-主要优势：更严格的权限审查">4. 主要优势：更严格的权限审查</h3>
+    <p>管理员保护模式最值得称道的进步在于其<strong>无差别的严格审查机制</strong>。</p>
+    <p>在旧版 UAC 的默认设置下，系统会信任部分核心的 Windows 二进制文件（如 <code>explorer.exe</code>、<code>mmc.exe</code>、<code>taskmgr.exe</code> 等），执行这些程序内部的管理任务时不会触发 UAC 弹窗。</p>
+    <p>新版管理员保护模式则彻底改变了这一规则，它<strong>强制审查所有需要提升权限的应用和操作</strong>，无论其是否为系统组件。这意味着：</p>
+    <ul>
+    <li><p>打开任何 MMC 控制台组件（如计算机管理、组策略、磁盘管理）需要 UAC 授权。</p>
+    </li>
+    <li><p>在管理员权限下进行文件复制、移动或更改文件夹权限，同样需要 UAC 授权。</p>
+    </li>
+    </ul>
+    <p>这种机制极大地增加了 UAC 的“出镜率”，迫使用户对每一个潜在的系统级更改进行确认，从而显著降低了恶意代码静默运行的可能性，大幅提升了系统的整体安全性。</p>
+    <p></p>
+    <h3 class="atx" id="5-巨大缺陷：沙盒化的隔离与兼容性灾难">5. 巨大缺陷：沙盒化的隔离与兼容性灾难</h3>
+    <p>尽管安全优势明显，但管理员保护模式在当前阶段存在一个几乎是“致命”的设计缺陷——一种非典型的“沙盒化”隔离机制。</p>
+    <p>当一个应用程序通过管理员保护模式获得授权后，它运行的环境与当前用户会话几乎是完全隔离的。这并非传统意义上的虚拟化沙盒，但其带来的后果却极其相似，并引发了严重的兼容性问题。</p>
+    <ul>
+    <li><p><strong>配置与设置不共享</strong>: 提升后的应用似乎是在一个全新的、临时的用户配置中运行。它无法读取当前用户的应用设置。例如，一个文本编辑器在提升权限后，会恢复到初始安装状态，所有个性化配置（如主题、字体）都会丢失。</p>
+    </li>
+    <li><p><strong>无法长期占用系统控制权</strong>: 由于凭据“用后即毁”，提升后的应用无法维持对系统的长期控制或在后台持续提供服务。这直接导致了以下几类软件的<strong>完全失效</strong>：</p>
+    <ul>
+    <li><p><strong>所有安全软件</strong>: 杀毒软件、防火墙等需要持续监控系统后台的程序，在提升权限后也无法正常工作。</p>
+    </li>
+    <li><p><strong>VPN 及网络工具</strong>: VPN 客户端无法持续管理网络适配器和路由表。</p>
+    </li>
+    <li><p><strong>系统增强工具</strong>: 如 Windhawk、第三方手势控制软件、硬件监控和风扇控制软件等，凡是需要常驻后台并具备管理员权限的工具，均会失效。</p>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <p>这种设计使得提升后的应用只能执行一次性的、短暂的系统更改任务，而无法成为一个功能完整的、持续运行的管理工具。</p>
+    <h3 class="atx" id="6-结论">6. 结论</h3>
+    <p>Windows 11 的新版管理员保护模式是一次大胆的安全尝试，它将“最小权限原则”和“凭据即时销毁”的理念带到了消费级操作系统中。其严格的审查机制无疑为系统构建了一道坚固的防线，能有效抵御许多自动化和静默式的攻击。</p>
+    <p>然而，就目前来看，它更像是一个“技术预览”或“概念验证”产品，而非一个成熟的解决方案。其“沙盒化”带来的严重兼容性问题，使其在当前阶段几乎无法被普通用户乃至高级用户作为日常模式使用。它在提升安全性的同时，极大地破坏了 Windows 生态系统的兼容性和可用性，形成了一种”高安全，低可用”的极端局面。这也揭示了安全与实用不可兼得的道理。</p>
+    <p>未来，如果微软能够解决应用设置共享和后台服务持续运行的问题，在不牺牲其核心安全机制的前提下改善兼容性，管理员保护模式或许能成为高安全需求环境下的理想选择。但在那之前，它仍然是一项优缺点都极其鲜明的、有待完善的新功能。</p>
+    <hr>
+    <p>致 Microsoft</p>
+  </article>
+
+  <!-- 底部版权信息开始 -->
+  <div class="footer-copyright">
+    Copyright 2025 Alvin-1D0642
+  </div>
+  <!-- 底部版权信息结束 -->
+
+</body>
+</html>
